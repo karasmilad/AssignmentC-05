@@ -48,14 +48,41 @@
             //Console.WriteLine($"The Sum of the Array is : {sum}");
             #endregion
             #region Question21
-            int[] firstArr = { 9, 6, 4, 5, 2 };
-            int[] secondArr = { 3, 7, 8, 1, 10 };
-            int[] mergedArr = new int[firstArr.Length + secondArr.Length];
-            mergedArr = firstArr.Concat(secondArr).ToArray();
-            Array.Sort(mergedArr);
-            foreach (int item in mergedArr)
+            //int[] firstArr = { 9, 6, 4, 5, 2 };
+            //int[] secondArr = { 3, 7, 8, 1, 10 };
+            //int[] mergedArr = new int[firstArr.Length + secondArr.Length];
+            //mergedArr = firstArr.Concat(secondArr).ToArray();
+            //Array.Sort(mergedArr);
+            //foreach (int item in mergedArr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            #endregion
+            #region Question22
+            int size;
+            do
             {
-                Console.Write(item + " ");
+                Console.Write("Enter Size Of Array: ");
+            }
+            while (!int.TryParse(Console.ReadLine(), out size));
+            int [] arr = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                do
+                {
+                    Console.Write($"Enter The Element {i + 1} : ");
+                }
+                while (!int.TryParse(Console.ReadLine(), out arr[i]));
+            }
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (arr[i] == arr[j])
+                    {
+                        Console.WriteLine($"Duplicate Element = {arr[i]}");
+                    }
+                }
             }
             #endregion
         }
