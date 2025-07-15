@@ -59,13 +59,40 @@
             //}
             #endregion
             #region Question22
+            //int size;
+            //do
+            //{
+            //    Console.Write("Enter Size Of Array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out size));
+            //int [] arr = new int[size];
+            //for (int i = 0; i < size; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter The Element {i + 1} : ");
+            //    }
+            //    while (!int.TryParse(Console.ReadLine(), out arr[i]));
+            //}
+            //for (int i = 0; i < size; i++)
+            //{
+            //    for (int j = i + 1; j < size; j++)
+            //    {
+            //        if (arr[i] == arr[j])
+            //        {
+            //            Console.WriteLine($"Duplicate Element = {arr[i]}");
+            //        }
+            //    }
+            //}
+            #endregion
+            #region Question23
             int size;
             do
             {
                 Console.Write("Enter Size Of Array: ");
             }
             while (!int.TryParse(Console.ReadLine(), out size));
-            int [] arr = new int[size];
+            int[] arr = new int[size];
             for (int i = 0; i < size; i++)
             {
                 do
@@ -74,16 +101,21 @@
                 }
                 while (!int.TryParse(Console.ReadLine(), out arr[i]));
             }
-            for (int i = 0; i < size; i++)
+            int max = arr[0];
+            int min = arr[0];
+            for (int i = 1; i < size; i++)
             {
-                for (int j = i + 1; j < size; j++)
+                if (arr[i] > max)
                 {
-                    if (arr[i] == arr[j])
-                    {
-                        Console.WriteLine($"Duplicate Element = {arr[i]}");
-                    }
+                    max = arr[i];
+                }
+                if (arr[i] < min)
+                {
+                    min = arr[i];
                 }
             }
+            Console.WriteLine($"Maximum Number : {max}");
+            Console.WriteLine($"Minimum Number : {min}");
             #endregion
         }
     }
