@@ -86,36 +86,71 @@
             //}
             #endregion
             #region Question23
+            //int size;
+            //do
+            //{
+            //    Console.Write("Enter Size Of Array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out size)  || size <= 0);
+            //int[] arr = new int[size];
+            //for (int i = 0; i < size; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter The Element {i + 1} : ");
+            //    }
+            //    while (!int.TryParse(Console.ReadLine(), out arr[i]));
+            //}
+            //int max = arr[0];
+            //int min = arr[0];
+            //for (int i = 1; i < size; i++)
+            //{
+            //    if (arr[i] > max)
+            //    {
+            //        max = arr[i];
+            //    }
+            //    if (arr[i] < min)
+            //    {
+            //        min = arr[i];
+            //    }
+            //}
+            //Console.WriteLine($"Maximum Number : {max}");
+            //Console.WriteLine($"Minimum Number : {min}");
+            #endregion
+            #region Question24
             int size;
+            int repetedNumber = 0;
             do
             {
-                Console.Write("Enter Size Of Array: ");
+                Console.Write("Enter the Size of the array: ");
             }
-            while (!int.TryParse(Console.ReadLine(), out size));
-            int[] arr = new int[size];
+            while (!int.TryParse(Console.ReadLine(), out size) || size <= 0);
+            int[] numbers = new int[size];
             for (int i = 0; i < size; i++)
             {
                 do
                 {
-                    Console.Write($"Enter The Element {i + 1} : ");
+                    Console.Write($"Enter Element {i + 1}: ");
                 }
-                while (!int.TryParse(Console.ReadLine(), out arr[i]));
+                while (!int.TryParse(Console.ReadLine(), out numbers[i]));
             }
-            int max = arr[0];
-            int min = arr[0];
-            for (int i = 1; i < size; i++)
+            int maxDistance = 0;
+            for (int i = 0; i < size; i++)
             {
-                if (arr[i] > max)
+                for (int j = size - 1; j > i; j--)
                 {
-                    max = arr[i];
-                }
-                if (arr[i] < min)
-                {
-                    min = arr[i];
+                    if (numbers[i] == numbers[j])
+                    {
+                        int distance = j - i;
+                        if (maxDistance < distance)
+                        {
+                            maxDistance = distance;
+                        }
+                        repetedNumber = numbers[i];
+                    }
                 }
             }
-            Console.WriteLine($"Maximum Number : {max}");
-            Console.WriteLine($"Minimum Number : {min}");
+            Console.WriteLine($"Max Distance is = {maxDistance} , Number Of Element: {repetedNumber} ");
             #endregion
         }
     }
