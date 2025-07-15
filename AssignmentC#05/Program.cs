@@ -199,46 +199,71 @@
             //Console.WriteLine($"Your Result : {string.Join(" ", words)}");
             #endregion
             #region Question27
-            int col;
-            int rows;
+            //int col;
+            //int rows;
+            //do
+            //{
+            //    Console.Write("Enter the Rows Number of the array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out rows));
+            //do
+            //{
+            //    Console.Write("Enter the Colums Number of the array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out col));
+            //int[,] firstArray = new int[rows , col];
+            //int[,] secondArray = new int[rows , col];
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < col; j++)
+            //    {
+            //        do
+            //        {
+            //            Console.Write($"Enter Element [{i + 1} , {j + 1}] of First Array: ");
+            //        }
+            //        while (!int.TryParse(Console.ReadLine(), out firstArray[i, j]));
+            //    }
+            //}
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < col; j++)
+            //    {
+            //        secondArray[i, j] = firstArray[i, j];
+            //    }
+            //}
+            //Console.WriteLine("Display The Second Array: ");
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < col; j++)
+            //    {
+            //        Console.Write($"{secondArray[i, j]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Question28
+            //No numbers or words specified
+            int size;
             do
             {
-                Console.Write("Enter the Rows Number of the array: ");
+                Console.Write("Enter the Size of the array: ");
             }
-            while (!int.TryParse(Console.ReadLine(), out rows));
-            do
+            while (!int.TryParse(Console.ReadLine(), out size) || size <= 0);
+            int[] reversedNumbers = new int[size];
+            int[] numbers = new int[size];
+            for (int i = 0; i < size; i++)
             {
-                Console.Write("Enter the Colums Number of the array: ");
-            }
-            while (!int.TryParse(Console.ReadLine(), out col));
-            int[,] firstArray = new int[rows , col];
-            int[,] secondArray = new int[rows , col];
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < col; j++)
+                do
                 {
-                    do
-                    {
-                        Console.Write($"Enter Element [{i + 1} , {j + 1}] of First Array: ");
-                    }
-                    while (!int.TryParse(Console.ReadLine(), out firstArray[i, j]));
+                    Console.Write($"Enter Element {i + 1}: ");
                 }
+                while (!int.TryParse(Console.ReadLine(), out numbers[i]));
             }
-            for (int i = 0; i < rows; i++)
+            Array.Reverse(numbers);
+            reversedNumbers = numbers;
+            foreach (int item in reversedNumbers)
             {
-                for (int j = 0; j < col; j++)
-                {
-                    secondArray[i, j] = firstArray[i, j];
-                }
-            }
-            Console.WriteLine("Display The Second Array: ");
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < col; j++)
-                {
-                    Console.Write($"{secondArray[i, j]} ");
-                }
-                Console.WriteLine();
+                Console.Write(item + " ");
             }
             #endregion
         }
