@@ -153,38 +153,50 @@
             //Console.WriteLine($"Max Distance is = {maxDistance} , Number Of Element: {repetedNumber} ");
             #endregion
             #region Question25
-            int size;
+            //int size;
+            //do
+            //{
+            //    Console.Write("Enter the Size of the array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out size) || size <= 0);
+            //int[] numbers = new int[size];
+            //for (int i = 0; i < size; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter Element {i + 1}: ");
+            //    }
+            //    while (!int.TryParse(Console.ReadLine(), out numbers[i]));
+            //}
+            //int maximumNumber = 0;
+            //int secondMaximumNumber = 0;
+            //for (int i = 0;i<size; i++)
+            //{
+            //    if (numbers[i] > maximumNumber)
+            //    {
+            //        maximumNumber = numbers[i];
+            //        for (int j = 0; j < size; j++)
+            //        {
+            //            if (numbers[j] > secondMaximumNumber && numbers[j] < maximumNumber)
+            //            {
+            //                secondMaximumNumber = numbers[j];
+            //            }
+            //        }
+            //    }
+            //}
+            //Console.WriteLine($"The Second largest Number  = {secondMaximumNumber}");
+            #endregion
+            #region Question26
+            string input;
             do
             {
-                Console.Write("Enter the Size of the array: ");
+                Console.Write("Enter Your Text :");
+                input = Console.ReadLine();
             }
-            while (!int.TryParse(Console.ReadLine(), out size) || size <= 0);
-            int[] numbers = new int[size];
-            for (int i = 0; i < size; i++)
-            {
-                do
-                {
-                    Console.Write($"Enter Element {i + 1}: ");
-                }
-                while (!int.TryParse(Console.ReadLine(), out numbers[i]));
-            }
-            int maximumNumber = 0;
-            int secondMaximumNumber = 0;
-            for (int i = 0;i<size; i++)
-            {
-                if (numbers[i] > maximumNumber)
-                {
-                    maximumNumber = numbers[i];
-                    for (int j = 0; j < size; j++)
-                    {
-                        if (numbers[j] > secondMaximumNumber && numbers[j] < maximumNumber)
-                        {
-                            secondMaximumNumber = numbers[j];
-                        }
-                    }
-                }
-            }
-            Console.WriteLine($"The Second largest Number  = {secondMaximumNumber}");
+            while (string.IsNullOrWhiteSpace(input));
+            string [] words = input.Split(' ');
+            Array.Reverse(words);
+            Console.WriteLine($"Your Result : {string.Join(" ", words)}");
             #endregion
         }
     }
