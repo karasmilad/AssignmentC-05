@@ -118,8 +118,42 @@
             //Console.WriteLine($"Minimum Number : {min}");
             #endregion
             #region Question24
+            //int size;
+            //int repetedNumber = 0;
+            //do
+            //{
+            //    Console.Write("Enter the Size of the array: ");
+            //}
+            //while (!int.TryParse(Console.ReadLine(), out size) || size <= 0);
+            //int[] numbers = new int[size];
+            //for (int i = 0; i < size; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter Element {i + 1}: ");
+            //    }
+            //    while (!int.TryParse(Console.ReadLine(), out numbers[i]));
+            //}
+            //int maxDistance = 0;
+            //for (int i = 0; i < size; i++)
+            //{
+            //    for (int j = size - 1; j > i; j--)
+            //    {
+            //        if (numbers[i] == numbers[j])
+            //        {
+            //            int distance = j - i;
+            //            if (maxDistance < distance)
+            //            {
+            //                maxDistance = distance;
+            //            }
+            //            repetedNumber = numbers[i];
+            //        }
+            //    }
+            //}
+            //Console.WriteLine($"Max Distance is = {maxDistance} , Number Of Element: {repetedNumber} ");
+            #endregion
+            #region Question25
             int size;
-            int repetedNumber = 0;
             do
             {
                 Console.Write("Enter the Size of the array: ");
@@ -134,23 +168,23 @@
                 }
                 while (!int.TryParse(Console.ReadLine(), out numbers[i]));
             }
-            int maxDistance = 0;
-            for (int i = 0; i < size; i++)
+            int maximumNumber = 0;
+            int secondMaximumNumber = 0;
+            for (int i = 0;i<size; i++)
             {
-                for (int j = size - 1; j > i; j--)
+                if (numbers[i] > maximumNumber)
                 {
-                    if (numbers[i] == numbers[j])
+                    maximumNumber = numbers[i];
+                    for (int j = 0; j < size; j++)
                     {
-                        int distance = j - i;
-                        if (maxDistance < distance)
+                        if (numbers[j] > secondMaximumNumber && numbers[j] < maximumNumber)
                         {
-                            maxDistance = distance;
+                            secondMaximumNumber = numbers[j];
                         }
-                        repetedNumber = numbers[i];
                     }
                 }
             }
-            Console.WriteLine($"Max Distance is = {maxDistance} , Number Of Element: {repetedNumber} ");
+            Console.WriteLine($"The Second largest Number  = {secondMaximumNumber}");
             #endregion
         }
     }
