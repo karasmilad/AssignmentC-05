@@ -187,16 +187,59 @@
             //Console.WriteLine($"The Second largest Number  = {secondMaximumNumber}");
             #endregion
             #region Question26
-            string input;
+            //string input;
+            //do
+            //{
+            //    Console.Write("Enter Your Text :");
+            //    input = Console.ReadLine();
+            //}
+            //while (string.IsNullOrWhiteSpace(input));
+            //string [] words = input.Split(' ');
+            //Array.Reverse(words);
+            //Console.WriteLine($"Your Result : {string.Join(" ", words)}");
+            #endregion
+            #region Question27
+            int col;
+            int rows;
             do
             {
-                Console.Write("Enter Your Text :");
-                input = Console.ReadLine();
+                Console.Write("Enter the Rows Number of the array: ");
             }
-            while (string.IsNullOrWhiteSpace(input));
-            string [] words = input.Split(' ');
-            Array.Reverse(words);
-            Console.WriteLine($"Your Result : {string.Join(" ", words)}");
+            while (!int.TryParse(Console.ReadLine(), out rows));
+            do
+            {
+                Console.Write("Enter the Colums Number of the array: ");
+            }
+            while (!int.TryParse(Console.ReadLine(), out col));
+            int[,] firstArray = new int[rows , col];
+            int[,] secondArray = new int[rows , col];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    do
+                    {
+                        Console.Write($"Enter Element [{i + 1} , {j + 1}] of First Array: ");
+                    }
+                    while (!int.TryParse(Console.ReadLine(), out firstArray[i, j]));
+                }
+            }
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    secondArray[i, j] = firstArray[i, j];
+                }
+            }
+            Console.WriteLine("Display The Second Array: ");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write($"{secondArray[i, j]} ");
+                }
+                Console.WriteLine();
+            }
             #endregion
         }
     }
